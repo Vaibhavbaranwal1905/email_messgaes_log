@@ -1,4 +1,5 @@
-temp_messages
+temp_messages/*.log
+temp_messages/*.html
 *.log
 *.pyc
 *.swp
