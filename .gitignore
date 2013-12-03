@@ -1,0 +1,5 @@
+temp_messages
+*.log
+*.pyc
+*.swp
+
