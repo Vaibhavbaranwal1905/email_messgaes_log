@@ -1,0 +1,34 @@
+<h3><u>Email Messages Log</u></h3>
+<table border='2' cellspacing="5">
+	<thead>
+		<tr>
+			<td>S.no.</td>
+			<td><b>File Name</b></td>
+			<td><b>Link</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		{% for each_file in file_list%}
+			<tr>
+				<td>{{ forloop.counter0|add:file_list.start_index }}</td>
+				<td>{{ each_file }}</td>
+				<td><a href="/email_message/?fname={{ each_file }}" target="_blank">Link</a></td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<div class="pagination" style="margin-top: 20px; margin-left: 250px;">
+    <span class="step-links">
+        {% if file_list.has_previous %}
+            <a href="?page={{ file_list.previous_page_number }}"> << Previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ file_list.number }} OF {{ file_list.paginator.num_pages }}
+        </span>
+
+        {% if file_list.has_next %}
+            <a href="?page={{ file_list.next_page_number }}">Next >></a>
+        {% endif %}
+    </span>
+</div>
